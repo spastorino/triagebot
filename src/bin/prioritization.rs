@@ -9,7 +9,8 @@ async fn main() {
     let prioritization_steps = prioritization::prepare_steps();
 
     for step in &prioritization_steps {
-        print!("{}", step.call().await);
+        std::process::Command::new("clear").status().unwrap();
+        println!("{}", step.call().await);
 
         press_key_to_continue();
     }
